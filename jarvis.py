@@ -4,6 +4,8 @@ import speech_recognition as sr
 import wikipedia
 import webbrowser
 import os
+import pyjokes
+
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -57,13 +59,13 @@ if __name__ == '__main__':
            webbrowser.open("youtube.com")
        elif 'open google' in query:
            speak("opening google")
-           webbrowser.open("google.com")
+           webbrowser.open("https://www.google.com/")
        elif 'open github' in query:
            speak("opening github")
            webbrowser.open("https://github.com/ManasVerma1357?tab=repositories")
        elif 'open instagram' in query:
            speak("i think its your time for chill so as your wish i am opening instagram")
-           webbrowser.open("instagram.com")
+           webbrowser.open("https://www.instagram.com/")
        elif 'open whatsapp' in query:
            speak("yes sir, opening whatsapp for you")
            webbrowser.open("https://web.whatsapp.com/")
@@ -77,9 +79,24 @@ if __name__ == '__main__':
            speak("ok sir opening spotify")
            spotifypath = "C:\\Users\\Admin\\AppData\\Roaming\\Spotify\\Spotify.exe"
            os.startfile(spotifypath)
-       elif 'quit' in query:
+       elif 'cortana' in query:
+           speak("everyone was gangsta until i was not there")
+       elif 'joke' in query:
+           joke=pyjokes.get_joke(language='en', category='neutral')
+           print(joke)
+           speak(joke)
+       elif 'open visual studio code' in query:
+           speak("yes sir i am opening visual studio code")
+           vspath = "C:\\Users\\Admin\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+           os.startfile(vspath)
+       elif 'how are you' in query:
+           speak("i am fine sir.")
+       elif 'times of india' in query:
+           speak("opening times of india website")
+           webbrowser.open("https://timesofindia.indiatimes.com/defaultinterstitial.cms")
+       elif 'pranam' in query:
+           speak("namashkar sir")
+       elif 'exit' in query:
            speak("Bye sir i wish that i had helped you alot")
            quit()
-
-
 
